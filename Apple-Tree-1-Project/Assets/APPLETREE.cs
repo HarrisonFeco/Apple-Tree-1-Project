@@ -28,6 +28,7 @@ public class APPLETREE : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x += speed* Time.deltaTime;
         transform.position = pos;
+        
         if(pos.x < -leftAndRightEdge) 
         {
             speed = Mathf.Abs(speed);
