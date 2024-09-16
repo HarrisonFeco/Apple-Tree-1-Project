@@ -16,6 +16,6 @@ public class GameOver : MonoBehaviour
 
     void Update()
     {
-        OverText.text = "Game Over";
+        
     }
 }
