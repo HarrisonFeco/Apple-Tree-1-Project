@@ -7,7 +7,7 @@ public class ApplePicker : MonoBehaviour
 {
     [Header("Inscribed")]
     public GameObject basketPrefab;
-    public int numBaskets = 3;
+    public int numBaskets = 4;
     public float basketBottomY = -14f;
     public float basketSpacingY = 2f;
     public List<GameObject> basketList;
@@ -15,7 +15,7 @@ public class ApplePicker : MonoBehaviour
     void Start()
     {
         basketList = new List<GameObject>();
-        for(int i = 0; i <numBaskets;i++)
+        for(int i = 0; i < numBaskets; i++)
         {
             GameObject tBasketGO = Instantiate<GameObject>(basketPrefab);
             Vector3 pos = Vector3.zero;
@@ -39,10 +39,11 @@ public class ApplePicker : MonoBehaviour
                 Destroy(tempGO);
             }
 
-            int basketIndex = basketList.Count -1;
+            int basketIndex = basketList.Count - 1;
             GameObject basketGO = basketList[basketIndex];
             basketList.RemoveAt(basketIndex);
             Destroy(basketGO);
+
             if(basketList.Count == 0)
             {
                 SceneManager.LoadScene("_Scene_0");
