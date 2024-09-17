@@ -301,7 +301,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6197425960814220115}
   - component: {fileID: 6197425960814220112}
-  - component: {fileID: 6197425960814220113}
   - component: {fileID: 6197425960814220114}
   m_Layer: 5
   m_Name: RoundCounter
@@ -338,19 +337,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6197425960814220116}
   m_CullTransparentMesh: 1
---- !u!114 &6197425960814220113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6197425960814220116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eb1b548031f4354f8aa14c2557da273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetHighScoreNow: 0
 --- !u!114 &6197425960814220114
 MonoBehaviour:
   m_ObjectHideFlags: 0
