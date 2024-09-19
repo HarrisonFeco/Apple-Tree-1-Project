@@ -11,7 +11,6 @@ public class ApplePicker : MonoBehaviour
     public float basketBottomY = -14f;
     public float basketSpacingY = 2f;
     public List<GameObject> basketList;
-
     void Start()
     {
         basketList = new List<GameObject>();
@@ -26,31 +25,25 @@ public class ApplePicker : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
     public void AppleMissed()
-        {
-            GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
-            foreach(GameObject tempGO in appleArray)
-            {
-                Destroy(tempGO);
-            }
-
-            int basketIndex = basketList.Count - 1;
-            GameObject basketGO = basketList[basketIndex];
-            basketList.RemoveAt(basketIndex);
-            Destroy(basketGO);
-
-            if(basketList.Count == 0)
-            {
-                SceneManager.LoadScene("_Scene_0");
-            }
-        }
-    public void PoisonApple()
     {
+        GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
+        foreach(GameObject tempGO in appleArray)
+        {
+            Destroy(tempGO);
+        }
 
+        int basketIndex = basketList.Count - 1;
+        GameObject basketGO = basketList[basketIndex];
+        basketList.RemoveAt(basketIndex);
+        Destroy(basketGO);
+
+        if(basketList.Count == 0)
+        {
+            SceneManager.LoadScene("Game_Over");
+        }
     }
+
 }
+

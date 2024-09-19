@@ -10,11 +10,11 @@ public class APPLETREE : MonoBehaviour
     public float leftAndRightEdge = 10f;
     public float changeDirChance = 0.1f;
     public float appleDropDelay =1f;
-    
-    // Start is called before the first frame update
+   
     void Start()
     {
-        Invoke("DropApple", 2f);
+        Invoke("DropApple", 2f);  
+        Invoke("DropPoisonApple",5f);
     }
     void DropApple()
     {
@@ -22,7 +22,21 @@ public class APPLETREE : MonoBehaviour
         apple.transform.position = transform.position;
         Invoke("DropApple", appleDropDelay);
     }
-    // Update is called once per frame
+
+
+    [Header("InscribedPoisonApple")]
+    // public GameObject poisonApplePre;     
+    public float poisonAppleDropDelay = 9f;  
+
+    void DropPoisonApple()            
+    {
+        // GameObject poisonApple = Instantiate(poisonApplePre);
+        poisonApple.transform.position = transform.position;
+        Invoke("DropPoisonApple", poisonAppleDropDelay);
+       
+    }
+
+ 
     void Update()
     {
         Vector3 pos = transform.position;
@@ -37,10 +51,6 @@ public class APPLETREE : MonoBehaviour
         {
             speed = -Mathf.Abs(speed);
         }
-        // else if(Random.value < changeDirChance)
-        // {
-        //     speed *= -1;
-        // }
     }
     void FixedUpdate()
     {

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Basket : MonoBehaviour
 {
     public ScoreCounter scoreCounter;
-
+    private ApplePicker applePicker;
     void Start()
     {
         GameObject scoreGO = GameObject.Find("ScoreCounter");
@@ -31,5 +32,12 @@ public class Basket : MonoBehaviour
             scoreCounter.score += 100;
             HighScore.TRY_SET_HIGH_SCORE(scoreCounter.score);
         }
+         if(collidedWith.CompareTag("PoisonApple"))
+        {
+            Destroy(collidedWith);
+            scoreCounter.score +=0;
+            SceneManager.LoadScene("Game_Over"); //will have to change when harrison adds scenes
+        }
     }
 }
+
