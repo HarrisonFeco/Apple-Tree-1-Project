@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 1019302310289382971}
   - component: {fileID: 2592050061309873010}
   - component: {fileID: 880120956103749539}
-  - component: {fileID: 3121580409650045080}
   - component: {fileID: 2060851138965886510}
-  - component: {fileID: 5561362883922447295}
   - component: {fileID: 4364249801432318670}
+  - component: {fileID: 6757301320801709285}
   m_Layer: 11
   m_Name: PoisonApple
   m_TagString: PoisonApple
@@ -101,23 +100,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3121580409650045080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2392797832319040894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 125a5e16466e8b0498f6228d4ab201ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  basketPrefab: {fileID: 0}
-  numBaskets: 4
-  basketBottomY: -14
-  basketSpacingY: 2
-  basketList: []
 --- !u!54 &2060851138965886510
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,23 +116,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5561362883922447295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2392797832319040894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 125a5e16466e8b0498f6228d4ab201ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  basketPrefab: {fileID: 349108831159301918, guid: 0b9f0feba6488bb4a846e0e987004742, type: 3}
-  numBaskets: 4
-  basketBottomY: -14
-  basketSpacingY: 2
-  basketList: []
 --- !u!135 &4364249801432318670
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -164,3 +129,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6757301320801709285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2392797832319040894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5f93ea04053dd41acc7e19621c8144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -51,16 +51,6 @@ public class ApplePicker : MonoBehaviour
         {
             Destroy(tempGO);
         }
-
-        int basketIndex = basketList.Count - 1;
-        GameObject basketGO = basketList[basketIndex];
-        basketList.RemoveAt(basketIndex);
-        Destroy(basketGO);
-
-        if(basketList.Count == 0)
-        {
-            SceneManager.LoadScene("Game_Over");
-        }
     }
 
 }
