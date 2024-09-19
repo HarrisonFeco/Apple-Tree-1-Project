@@ -25,13 +25,13 @@ public class APPLETREE : MonoBehaviour
 
 
     [Header("InscribedPoisonApple")]
-    // public GameObject poisonApplePre;     
+    public GameObject poisonApplePre;    //problem 
     public float poisonAppleDropDelay = 9f;  
 
     void DropPoisonApple()            
     {
-        // GameObject poisonApple = Instantiate(poisonApplePre);
-       // poisonApple.transform.position = transform.position;
+        GameObject poisonApple = Instantiate(poisonApplePre); //problem
+        poisonApple.transform.position = transform.position;   //problem
         Invoke("DropPoisonApple", poisonAppleDropDelay);
        
     }

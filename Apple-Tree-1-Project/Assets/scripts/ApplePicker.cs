@@ -27,21 +27,29 @@ public class ApplePicker : MonoBehaviour
 
   
     public void AppleMissed()
+        {
+            GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
+            foreach(GameObject tempGO in appleArray)
+            {
+                Destroy(tempGO);
+            }
+
+            int basketIndex = basketList.Count - 1;
+            GameObject basketGO = basketList[basketIndex];
+            basketList.RemoveAt(basketIndex);
+            Destroy(basketGO);
+
+            if(basketList.Count == 0)
+            {
+                SceneManager.LoadScene("Game_Over");
+            }
+        }
+    public void PoisonApple()
     {
         GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
         foreach(GameObject tempGO in appleArray)
         {
             Destroy(tempGO);
-        }
-
-        int basketIndex = basketList.Count - 1;
-        GameObject basketGO = basketList[basketIndex];
-        basketList.RemoveAt(basketIndex);
-        Destroy(basketGO);
-
-        if(basketList.Count == 0)
-        {
-            SceneManager.LoadScene("Game_Over");
         }
     }
 
