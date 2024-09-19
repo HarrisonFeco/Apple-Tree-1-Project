@@ -31,7 +31,7 @@ public class APPLETREE : MonoBehaviour
     void DropPoisonApple()            
     {
         // GameObject poisonApple = Instantiate(poisonApplePre);
-        poisonApple.transform.position = transform.position;
+       // poisonApple.transform.position = transform.position;
         Invoke("DropPoisonApple", poisonAppleDropDelay);
        
     }
