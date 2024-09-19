@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class HighScore : MonoBehaviour
 {
+    [Header("Dynamic")]
     static private Text _UI_TEXT;
     static private int _SCORE = 1000;
     private Text txtCom;
