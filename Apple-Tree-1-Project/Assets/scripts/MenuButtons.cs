@@ -4,23 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameOverMenu : MonoBehaviour
+public class MenuButtons : MonoBehaviour
 {
     public string sceneName;
-    //public RoundCounter roundCounter;
+    public RoundCounter roundCounter;
 
     void Start()
     {
-        //GameObject roundGO = GameObject.Find("RoundCounter");
-        //roundCounter = roundGO.GetComponent<RoundCounter>();
+        GameObject roundGO = GameObject.Find("RoundCounter");
+        roundCounter = roundGO.GetComponent<RoundCounter>();
     }
     public void GoToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-        /*if(sceneName == "Apple_Game")
+        if(sceneName == "Apple_Game")
             {
                 roundCounter.round += 1;
-            }*/
+            }
     }
 
     public void QuitApp()
