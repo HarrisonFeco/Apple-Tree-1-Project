@@ -41,6 +41,7 @@ public class ApplePicker : MonoBehaviour
 
             if(basketList.Count == 0)
             {
+                RoundCounter.SET_NEW_ROUND_COUNT(RoundCounter.ROUND + 1);
                 SceneManager.LoadScene("Game_Over");
             }
         }
