@@ -35,8 +35,8 @@ public class Basket : MonoBehaviour
          if(collidedWith.CompareTag("PoisonApple"))
         {
             Destroy(collidedWith);
-            scoreCounter.score +=0;
-            SceneManager.LoadScene("Game_Over"); //will have to change when harrison adds scenes
+            RoundCounter.SET_NEW_ROUND_COUNT(RoundCounter.ROUND + 1);
+            SceneManager.LoadScene("Game_Over"); 
         }
     }
 }
