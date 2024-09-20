@@ -6,58 +6,70 @@ public class APPLETREE : MonoBehaviour
 {
     [Header("Inscribed")]
     public GameObject applePrefab;
-    public float speed =1f;
+    public float speed = 1f;
     public float leftAndRightEdge = 10f;
     public float changeDirChance = 0.1f;
-    public float appleDropDelay =1f;
-   
+    public float appleDropDelay = 0.5f;
+    
+    [Header("InscribedPoisonApple")]
+    public GameObject poisonApplePrefab;
+    public float PoisonAppleDropDelay = 1f; 
+    int counter = 0;
     void Start()
     {
-        Invoke("DropApple", 2f);  
-        Invoke("DropPoisonApple",5f);
-    }
-    void DropApple()
-    {
-        GameObject apple = Instantiate<GameObject>(applePrefab);
-        apple.transform.position = transform.position;
-        Invoke("DropApple", appleDropDelay);
-    }
-
-
-    [Header("InscribedPoisonApple")]
-    public GameObject poisonApplePre;    //problem 
-    public float poisonAppleDropDelay = 9f;  
-
-    void DropPoisonApple()            
-    {
-        GameObject poisonApple = Instantiate(poisonApplePre); //problem
-        poisonApple.transform.position = transform.position;   //problem
-        Invoke("DropPoisonApple", poisonAppleDropDelay);
+        Invoke("DropApples", 1f);
        
     }
 
- 
+    void DropApple()
+    {
+        GameObject apple = Instantiate(applePrefab);
+        apple.transform.position = transform.position;
+    }
+
+    void DropPoisonApple()
+    {
+        GameObject poisonApple = Instantiate(poisonApplePrefab);
+        poisonApple.transform.position = transform.position;
+        
+    }
+
+   void DropApples()
+   {    
+        counter ++;
+        if(counter %11 == 8)
+        {
+            Invoke("DropPoisonApple",PoisonAppleDropDelay);
+
+        }
+        else
+        {
+            Invoke("DropApple", appleDropDelay);
+        }
+        Invoke("DropApples", 1f);
+   }
+
     void Update()
     {
         Vector3 pos = transform.position;
-        pos.x += speed* Time.deltaTime;
+        pos.x += speed * Time.deltaTime;
         transform.position = pos;
-        
-        if(pos.x < -leftAndRightEdge) 
+
+        if (pos.x < -leftAndRightEdge)
         {
-            speed = Mathf.Abs(speed);
+            speed = Mathf.Abs(speed); 
         }
-        else if(pos.x > leftAndRightEdge)
+        else if (pos.x > leftAndRightEdge)
         {
-            speed = -Mathf.Abs(speed);
-        }
-    }
-    void FixedUpdate()
-    {
-        if(Random.value < changeDirChance)
-        {
-            speed *=-1;
+            speed = -Mathf.Abs(speed); 
         }
     }
 
+    void FixedUpdate()
+    {
+        if (Random.value < changeDirChance)
+        {
+            speed *= -1;
+        }
+    }
 }
