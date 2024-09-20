@@ -47,14 +47,14 @@ public class ApplePicker : MonoBehaviour
                 SceneManager.LoadScene("Game_Over");
             }
         }
-    public void PoisonApple()
-    {
-        GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
-        foreach(GameObject tempGO in appleArray)
-        {
-            Destroy(tempGO);
-        }
-    }
+    // public void PoisonApple()
+    // {
+    //     GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
+    //     foreach(GameObject tempGO in appleArray)
+    //     {
+    //         Destroy(tempGO);
+    //     }
+    // }
 
 }
 
