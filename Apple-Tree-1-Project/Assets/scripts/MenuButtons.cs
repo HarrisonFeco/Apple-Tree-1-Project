@@ -7,20 +7,17 @@ using UnityEngine.UI;
 public class MenuButtons : MonoBehaviour
 {
     public string sceneName;
-    public RoundCounter roundCounter;
 
     void Start()
     {
-        GameObject roundGO = GameObject.Find("RoundCounter");
-        roundCounter = roundGO.GetComponent<RoundCounter>();
     }
     public void GoToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-        if(sceneName == "Apple_Game")
-            {
-                roundCounter.round += 1;
-            }
+        if(sceneName == "Main_Menu")
+        {
+            RoundCounter.SET_NEW_ROUND_COUNT(1);
+        }
     }
 
     public void QuitApp()

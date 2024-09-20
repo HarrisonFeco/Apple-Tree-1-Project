@@ -3,19 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class RoundCounter : MonoBehaviour
 {
-    [Header("Dynamic")]
-    public int round = 0;
-    private Text roundCount;
+     [Header("Dynamic")]
+    static private Text _ROUND_TEXT;
+    static private int _ROUND = 1;
+    private Text txtCom;
+    
+    void Awake () 
+    {
+        _ROUND_TEXT = GetComponent<Text>();
+        if(PlayerPrefs.HasKey("Round"))
+        {
+            ROUND = PlayerPrefs.GetInt("Round");
+        }
+        PlayerPrefs.SetInt("Round",ROUND);
+    }
 
-    void Start()
+    static public int ROUND
     {
-        roundCount = GetComponent<Text>();
+        get { return _ROUND; }
+        private set 
+        {
+            _ROUND = value;
+            PlayerPrefs.SetInt("Round",value);
+            if (_ROUND_TEXT != null)
+            {
+                _ROUND_TEXT.text = "Round: " + value.ToString("#,0");
+            }
+        }
     }
-    void Update()
+static public void SET_NEW_ROUND_COUNT(int newRoundCount)
+{
+    ROUND = newRoundCount;
+}
+
+[Tooltip("Check this box to reset the Round in PlayerPrefs")]
+public bool resetRoundCount = false;
+
+void OnDrawGizmos()
+{
+    if(resetRoundCount)
     {
-        roundCount.text = "Round:" + round.ToString("#,0");
+        resetRoundCount = false;
+        PlayerPrefs.SetInt("Round",1);
+        Debug.LogWarning("PlayerPrefs Round reset to 1.");
     }
+}
 }

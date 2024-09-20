@@ -295,7 +295,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5974315076348413232, guid: 5eec5e6bc1f659c43bf5f35ab4e6cac4, type: 3}
   m_PrefabInstance: {fileID: 5974315077099481234}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1786756755
+--- !u!114 &1786756759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,10 +304,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1786756751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb95b400ffed5ea448662315d1fc8e59, type: 3}
+  m_Script: {fileID: 11500000, guid: 3aebbc56b83545944b39b18838715114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  round: 1
+  resetRoundCount: 0
 --- !u!1 &2086907353
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basketPrefab: {fileID: 349108831159301918, guid: 0b9f0feba6488bb4a846e0e987004742, type: 3}
-  numBaskets: 1
+  numBaskets: 4
   basketBottomY: -14
   basketSpacingY: 2
   basketList: []
@@ -419,7 +419,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5974315076348413243, guid: 5eec5e6bc1f659c43bf5f35ab4e6cac4, type: 3}
       propertyPath: m_Text
-      value: 'R0und: 69'
+      value: 'Round:'
       objectReference: {fileID: 0}
     - target: {fileID: 5974315077174106816, guid: 5eec5e6bc1f659c43bf5f35ab4e6cac4, type: 3}
       propertyPath: m_Pivot.x
@@ -508,6 +508,10 @@ PrefabInstance:
     - target: {fileID: 5974315077174106844, guid: 5eec5e6bc1f659c43bf5f35ab4e6cac4, type: 3}
       propertyPath: m_Name
       value: StatTracker
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974315077251134855, guid: 5eec5e6bc1f659c43bf5f35ab4e6cac4, type: 3}
+      propertyPath: resetHighScoreNow
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eec5e6bc1f659c43bf5f35ab4e6cac4, type: 3}
