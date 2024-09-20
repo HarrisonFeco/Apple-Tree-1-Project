@@ -35,7 +35,7 @@ public class Basket : MonoBehaviour
          if(collidedWith.CompareTag("PoisonApple"))
         {
             Destroy(collidedWith);
-            //RoundCounter.SET_NEW_ROUND_COUNT(RoundCounter.ROUND + 1);
+            RoundCounter.SET_NEW_ROUND_COUNT(RoundCounter.ROUND + 1);
             SceneManager.LoadScene("Game_Over"); 
             Debug.LogWarning("Poison apple destroyed");
         }
